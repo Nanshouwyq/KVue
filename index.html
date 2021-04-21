@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <p>{{counter}}</p>      
+      <div k-html="counter"></div> 
+      <div>{{val}}</div>
+      <input type="text" k-model="val"/>
+      <button @click="add">添加</button>    
+    </div>
+    <script src="compile.js"></script>
+    <script src="kvue.js"></script>
+    <script>
+        const app = new KVue({
+            el:'#app',
+            data:{
+                counter:1,
+                val:1,
+            },
+            methods:{
+             add(){
+                 this.counter ++
+             }
+            }
+        })
+
+        // setInterval(()=>{
+        //     app.counter ++
+        // },1000)
+    </script>
+</body>
+</html>
